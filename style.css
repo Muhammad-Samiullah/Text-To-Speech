@@ -10,11 +10,29 @@ input {
 div {
     margin:10px 0px;
 }
-button {
+#speak-btn {
     padding:10px;
     background-color:#6a67ce;
     color: #FFFFFF;
     border: 0px;
     cursor:pointer;
     border-radius: 5px;
+}
+
+select {
+    font-size: 17px;
+    border: 1px solid #6a67ce;
+    background-color: #6a67ce;
+    color: white;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+select:focus {
+    outline: none;
+}
+
+option {
+    background-color: white;
+    color: black;
 }

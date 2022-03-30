@@ -25,10 +25,14 @@ function setSpeech() {
 voicesList = []
 let s = setSpeech();
 s.then((voices) => {
-    // console.log(voices)
     voicesList = voices;
+    for(let i=0; i<voicesList.length; i++) {
+        var option = document.createElement('option');
+        option.innerText = 'Voice ' + (parseInt(i)+1);
+        option.setAttribute('value', i);
+        document.getElementById('voice-select').append(option)
+    }
 });
-
 
 function textToAudio() {
     let msg = document.getElementById("text-to-speech").value;
@@ -38,11 +42,6 @@ function textToAudio() {
 }
 
 function changeLanguage() {
-    if(voiceIndex < voicesList.length) {
-        voiceIndex += 1;
-    }
-    else {
-        voiceIndex = 0;
-    }
-    speech.voice = voicesList[voiceIndex];
+    let value = document.getElementById('voice-select').value;
+    speech.voice = voicesList[value];
 }
